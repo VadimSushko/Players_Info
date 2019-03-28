@@ -11,9 +11,7 @@ import SwiftyJSON
 
 class PlayersListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    
 
-    
     var players = [PlayerModel]() {
         didSet {
             activityIndicator.stopAnimating()

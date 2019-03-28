@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ball" translatesAutoresizingMaskIntoConstraints="NO" id="Gpd-Tb-9zx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scu-3H-L01">
                                 <rect key="frame" x="137" y="316.5" width="101" height="34"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="19"/>
@@ -31,8 +34,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.87058823529411766" green="0.82352941176470584" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Gpd-Tb-9zx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2QS-nN-gdL"/>
                             <constraint firstItem="scu-3H-L01" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2XO-tv-YCh"/>
+                            <constraint firstItem="Gpd-Tb-9zx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GcL-8a-Pdp"/>
+                            <constraint firstItem="Gpd-Tb-9zx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QrU-dN-gPU"/>
                             <constraint firstItem="scu-3H-L01" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ncC-rR-xO2"/>
+                            <constraint firstItem="Gpd-Tb-9zx" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="znd-9P-OWc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -42,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-257" y="127"/>
+            <point key="canvasLocation" x="-207.19999999999999" y="-89.505247376311857"/>
         </scene>
         <!--Players List Table View Controller-->
         <scene sceneID="D0M-73-LIm">
@@ -52,6 +59,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ball" translatesAutoresizingMaskIntoConstraints="NO" id="8f0-sb-o2m">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Ng1-l8-jGj">
                                 <rect key="frame" x="169" y="325" width="37" height="37"/>
                                 <color key="color" red="0.12593119589999999" green="0.59141021569999996" blue="0.19916697080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -148,10 +158,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.87058823529411766" green="0.82352941176470584" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="8f0-sb-o2m" firstAttribute="top" secondItem="L4o-Aa-Aib" secondAttribute="top" id="04d-Gn-JqL"/>
+                            <constraint firstItem="8f0-sb-o2m" firstAttribute="leading" secondItem="SwL-E3-UzV" secondAttribute="leading" id="4C8-oW-lVX"/>
                             <constraint firstItem="WRQ-Ag-peJ" firstAttribute="top" secondItem="SwL-E3-UzV" secondAttribute="top" id="5EE-Sq-BYr"/>
+                            <constraint firstItem="8f0-sb-o2m" firstAttribute="bottom" secondItem="SwL-E3-UzV" secondAttribute="bottom" id="Cwy-We-bb7"/>
                             <constraint firstItem="WRQ-Ag-peJ" firstAttribute="leading" secondItem="SwL-E3-UzV" secondAttribute="leading" id="GxE-gw-6vL"/>
                             <constraint firstItem="WRQ-Ag-peJ" firstAttribute="bottom" secondItem="SwL-E3-UzV" secondAttribute="bottom" id="NVt-aD-vHB"/>
                             <constraint firstItem="WRQ-Ag-peJ" firstAttribute="trailing" secondItem="SwL-E3-UzV" secondAttribute="trailing" id="NtO-Cf-UIN"/>
+                            <constraint firstItem="8f0-sb-o2m" firstAttribute="trailing" secondItem="SwL-E3-UzV" secondAttribute="trailing" id="axz-IB-Yxg"/>
                             <constraint firstItem="Ng1-l8-jGj" firstAttribute="centerX" secondItem="SwL-E3-UzV" secondAttribute="centerX" id="ifv-vm-HBj"/>
                             <constraint firstItem="Ng1-l8-jGj" firstAttribute="centerY" secondItem="SwL-E3-UzV" secondAttribute="centerY" id="qaN-9i-vJu"/>
                         </constraints>
@@ -167,4 +181,7 @@
             <point key="canvasLocation" x="586.39999999999998" y="-33.733133433283363"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ball" width="780" height="490"/>
+    </resources>
 </document>

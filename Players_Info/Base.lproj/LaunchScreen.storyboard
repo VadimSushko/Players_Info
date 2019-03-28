@@ -17,13 +17,27 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ball" translatesAutoresizingMaskIntoConstraints="NO" id="QhX-W6-ZVw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.87058823529999996" green="0.82352941180000006" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QhX-W6-ZVw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Gri-Dy-DSK"/>
+                            <constraint firstItem="QhX-W6-ZVw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ltx-Yo-A2s"/>
+                            <constraint firstItem="QhX-W6-ZVw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bSR-cP-MJU"/>
+                            <constraint firstItem="QhX-W6-ZVw" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="qav-cT-kCg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ball" width="780" height="490"/>
+    </resources>
 </document>
