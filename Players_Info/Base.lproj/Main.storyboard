@@ -1,24 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Initial View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="InitialViewController" customModule="Players_Info" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scu-3H-L01">
+                                <rect key="frame" x="137" y="316.5" width="101" height="34"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="19"/>
+                                <state key="normal" title=" GET INFO ">
+                                    <color key="titleColor" red="0.12593119589999999" green="0.59141021569999996" blue="0.19916697080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="k8F-Bo-F7K" kind="show" id="afk-3g-5IX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87058823529411766" green="0.82352941176470584" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="scu-3H-L01" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2XO-tv-YCh"/>
+                            <constraint firstItem="scu-3H-L01" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ncC-rR-xO2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="getButton" destination="scu-3H-L01" id="gKy-Ge-Ohk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-257" y="127"/>
+        </scene>
+        <!--Players List Table View Controller-->
+        <scene sceneID="D0M-73-LIm">
+            <objects>
+                <viewController id="k8F-Bo-F7K" customClass="PlayersListTableViewController" customModule="Players_Info" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L4o-Aa-Aib">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Ng1-l8-jGj">
+                                <rect key="frame" x="169" y="325" width="37" height="37"/>
+                                <color key="color" red="0.12593119589999999" green="0.59141021569999996" blue="0.19916697080000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WRQ-Ag-peJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="210" id="owG-LH-4yl" customClass="PlayerInfoTableViewCell" customModule="Players_Info" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="210"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="owG-LH-4yl" id="SJb-12-o2M">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SXD-x7-VoP">
+                                                    <rect key="frame" x="15" y="11" width="345" height="188"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="503-nX-OH3">
+                                                            <rect key="frame" x="8" y="11" width="329" height="166"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2T-Jd-1fz">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="329" height="21"/>
+                                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                                                    <color key="textColor" red="0.1215686275" green="0.14117647059999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeX-fg-Tbw">
+                                                                    <rect key="frame" x="0.0" y="29" width="329" height="21"/>
+                                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                                    <color key="textColor" red="0.85353488498147245" green="0.89421399111675126" blue="0.82051179273879304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zN-DT-nr2">
+                                                                    <rect key="frame" x="0.0" y="58" width="329" height="21"/>
+                                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                                    <color key="textColor" red="0.85353488498147245" green="0.89421399111675126" blue="0.82051179273879304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6C-Cg-u9i">
+                                                                    <rect key="frame" x="0.0" y="87" width="329" height="21"/>
+                                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                                    <color key="textColor" red="0.85353488498147245" green="0.89421399111675126" blue="0.82051179273879304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmw-fX-Fu1">
+                                                                    <rect key="frame" x="0.0" y="116" width="329" height="21"/>
+                                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                                    <color key="textColor" red="0.85353488498147245" green="0.89421399111675126" blue="0.82051179273879304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eB-AY-gSQ">
+                                                                    <rect key="frame" x="0.0" y="145" width="329" height="21"/>
+                                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                                    <color key="textColor" red="0.85353488498147245" green="0.89421399111675126" blue="0.82051179273879304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.12593119591960689" green="0.59141021573604058" blue="0.19916697083444232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="503-nX-OH3" firstAttribute="centerY" secondItem="SXD-x7-VoP" secondAttribute="centerY" id="EcP-lA-zbY"/>
+                                                        <constraint firstItem="503-nX-OH3" firstAttribute="leading" secondItem="SXD-x7-VoP" secondAttribute="leading" constant="8" id="hts-2b-WbL"/>
+                                                        <constraint firstAttribute="trailing" secondItem="503-nX-OH3" secondAttribute="trailing" constant="8" id="zNS-Qr-EnH"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="SXD-x7-VoP" firstAttribute="top" secondItem="SJb-12-o2M" secondAttribute="topMargin" id="4t8-hO-Lx0"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="SXD-x7-VoP" secondAttribute="bottom" id="Hi3-q0-rLC"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="SXD-x7-VoP" secondAttribute="trailing" id="Xqb-2E-d7Z"/>
+                                                <constraint firstItem="SXD-x7-VoP" firstAttribute="leading" secondItem="SJb-12-o2M" secondAttribute="leadingMargin" id="yl9-Bi-jbo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="ageLabel" destination="oeX-fg-Tbw" id="Lna-sR-k8n"/>
+                                            <outlet property="background" destination="SXD-x7-VoP" id="vgl-6J-NTr"/>
+                                            <outlet property="currentSquadLabel" destination="Qmw-fX-Fu1" id="8Mq-hD-sCj"/>
+                                            <outlet property="footNameLabel" destination="Z6C-Cg-u9i" id="40g-mz-b4x"/>
+                                            <outlet property="heightLabel" destination="4zN-DT-nr2" id="J69-Fy-HRh"/>
+                                            <outlet property="parrentSquadLabel" destination="6eB-AY-gSQ" id="qhy-Uv-mSZ"/>
+                                            <outlet property="shortNameLabel" destination="D2T-Jd-1fz" id="Fpw-ge-q0k"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="k8F-Bo-F7K" id="oqE-bB-x5F"/>
+                                    <outlet property="delegate" destination="k8F-Bo-F7K" id="SN8-JE-zby"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87058823529411766" green="0.82352941176470584" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WRQ-Ag-peJ" firstAttribute="top" secondItem="SwL-E3-UzV" secondAttribute="top" id="5EE-Sq-BYr"/>
+                            <constraint firstItem="WRQ-Ag-peJ" firstAttribute="leading" secondItem="SwL-E3-UzV" secondAttribute="leading" id="GxE-gw-6vL"/>
+                            <constraint firstItem="WRQ-Ag-peJ" firstAttribute="bottom" secondItem="SwL-E3-UzV" secondAttribute="bottom" id="NVt-aD-vHB"/>
+                            <constraint firstItem="WRQ-Ag-peJ" firstAttribute="trailing" secondItem="SwL-E3-UzV" secondAttribute="trailing" id="NtO-Cf-UIN"/>
+                            <constraint firstItem="Ng1-l8-jGj" firstAttribute="centerX" secondItem="SwL-E3-UzV" secondAttribute="centerX" id="ifv-vm-HBj"/>
+                            <constraint firstItem="Ng1-l8-jGj" firstAttribute="centerY" secondItem="SwL-E3-UzV" secondAttribute="centerY" id="qaN-9i-vJu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SwL-E3-UzV"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Ng1-l8-jGj" id="YfI-aA-P1Z"/>
+                        <outlet property="myTableView" destination="WRQ-Ag-peJ" id="f5T-Uo-XbK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yhl-hz-qnS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="586.39999999999998" y="-33.733133433283363"/>
         </scene>
     </scenes>
 </document>
